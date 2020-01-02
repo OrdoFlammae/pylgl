@@ -6,7 +6,7 @@
 /*------------------------------------------------------------------------*/
 
 typedef struct Opt {
-  const char * lng, * descrp;
+  const char *lng, *descrp;
   int val, min, max, dflt;
 } Opt;
 
@@ -15,7 +15,7 @@ typedef struct Opt {
 #ifdef OPT
 #undef OPT
 #endif
-#define OPT(LNG,VAL,MIN,MAX,DESCRP) Opt LNG
+#define OPT(LNG, VAL, MIN, MAX, DESCRP) Opt LNG
 
 typedef struct Opts {
   Opt beforefirst;
@@ -32,7 +32,7 @@ struct LGL;
 
 /*------------------------------------------------------------------------*/
 
-void lglinitopts (struct LGL *, Opts *);
+void lglinitopts(struct LGL *, Opts *);
 
 /*------------------------------------------------------------------------*/
 
