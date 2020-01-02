@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+.ccls-cache
+compile_commands.json
