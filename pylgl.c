@@ -5,6 +5,8 @@
  */
 #define PYLGL_URL "https://pypi.python.org/pypi/pylgl"
 
+#include "pylgl.h"
+
 #include <Python.h>
 
 #ifdef _MSC_VER
@@ -28,6 +30,8 @@
 #if PY_MAJOR_VERSION == 2 && PY_MINOR_VERSION <= 5
 #define PyUnicode_FromString PyString_FromString
 #endif
+
+#include "pylgl_solver.h"
 
 inline static void *py_malloc(void *mmgr, size_t bytes) {
   return PyMem_Malloc(bytes);
@@ -140,7 +144,7 @@ static int add_clauses(LGL *lgl, PyObject *clauses) {
   return 0;
 }
 
-static LGL *setup_lgl(PyObject *args, PyObject *kwds) {
+LGL *setup_lgl(PyObject *args, PyObject *kwds) {
   LGL *lgl;
 
   PyObject *clauses; /* iterable of clauses */
