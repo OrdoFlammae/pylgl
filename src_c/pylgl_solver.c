@@ -39,7 +39,6 @@ PyObject *solver_str(solver_object *self) {
 
   lglctrav(self->lgl, &count, lgl_trav_count);
   result = PyString_FromFormat("p cnf %i %i\n", lglmaxvar(self->lgl), count);
-  PySys_WriteStdout("Still here!\n");
 
   tmp = PyString_FromString("");
   lglctrav(self->lgl, &tmp, lgl_trav_tostring);
