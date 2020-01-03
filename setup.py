@@ -4,11 +4,11 @@ from distutils.core import setup, Extension
 version = '0.0.3'
 
 ext_kwds = dict(name="pylgl",
-                sources=["pylgl.c",
-                         "pylgl_solver.c",
-                         "lglib.c",
-                         "lglopts.c",
-                         "lglbnr.c"],
+                sources=["src_c/pylgl.c",
+                         "src_c/pylgl_solver.c",
+                         "src_c/lglib.c",
+                         "src_c/lglopts.c",
+                         "src_c/lglbnr.c"],
                 define_macros=[('NLGLOG', True),
                                ('NCHKSOL', True),
                                ('NLGLDRUPLIG', True),
