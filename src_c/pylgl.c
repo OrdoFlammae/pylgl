@@ -375,12 +375,12 @@ Please see " PYLGL_URL " for more details.");
 /* initialization routine for the shared libary */
 #ifdef IS_PY3K
 static PyModuleDef moduledef = {
-    PyModuleDef_HEAD_INIT, "pylgl", module_doc, -1, module_functions,
+    PyModuleDef_HEAD_INIT, "pylgl_c", module_doc, -1, module_functions,
 };
 
-PyMODINIT_FUNC PyInit_pylgl(void)
+PyMODINIT_FUNC PyInit_pylgl_c(void)
 #else
-PyMODINIT_FUNC initpylgl(void)
+PyMODINIT_FUNC initpylgl_c(void)
 #endif
 {
   PyObject *m;
@@ -403,7 +403,7 @@ PyMODINIT_FUNC initpylgl(void)
     return;
   }
 
-  m = Py_InitModule3("pylgl", module_functions, module_doc);
+  m = Py_InitModule3("pylgl_c", module_functions, module_doc);
   if (m == NULL) {
     return;
   }

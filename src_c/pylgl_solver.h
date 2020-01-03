@@ -25,7 +25,7 @@ static PyMethodDef solver_methods[] = {
 
 static PyTypeObject solver_type = {
     PyVarObject_HEAD_INIT(NULL, 0)            // tp_head
-    "pylgl.solver",                           // tp_name
+    "solver",                                 // tp_name
     sizeof(solver_object),                    // tp_basicsize
     0,                                        // tp_itemsize
     (destructor)solver_dealloc,               // tp_dealloc

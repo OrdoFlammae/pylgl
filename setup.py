@@ -3,7 +3,7 @@ from distutils.core import setup, Extension
 
 version = '0.0.3'
 
-ext_kwds = dict(name="pylgl",
+ext_kwds = dict(name="pylgl_c",
                 sources=["src_c/pylgl.c",
                          "src_c/pylgl_solver.c",
                          "src_c/lglib.c",
