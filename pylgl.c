@@ -16,6 +16,8 @@
 
 #include "lglib.h"
 
+#include "pylgl_solver.h"
+
 #if PY_MAJOR_VERSION >= 3
 #define IS_PY3K
 #endif
@@ -184,7 +186,7 @@ LGL *setup_lgl(PyObject *args, PyObject *kwds) {
 
 static void destroy_lgl(LGL *lgl) { lglrelease(lgl); }
 
-static PyObject *get_solution(LGL *lgl) {
+PyObject *get_solution(LGL *lgl) {
   PyObject *list;
   int max_idx;
   int i;
@@ -397,10 +399,16 @@ PyMODINIT_FUNC initpylgl(void)
     return;
   }
 
+  if (PyType_Ready(&solver_type) < 0) {
+    return;
+  }
+
   m = Py_InitModule3("pylgl", module_functions, module_doc);
   if (m == NULL) {
     return;
   }
+
+  PyModule_AddObject(m, "solver", (PyObject *)&solver_type);
 #endif
 
 #ifdef PYLGL_VERSION

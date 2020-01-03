@@ -6,5 +6,6 @@
 #include "lglib.h"
 
 LGL *setup_lgl(PyObject *args, PyObject *kwds);
+PyObject *get_solution(LGL *lgl);
 
 #endif /* PYLGL_H */
